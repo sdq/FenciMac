@@ -1,0 +1,400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		320643BC1D7984D200C52E24 /* Fenci.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 320643B71D7984D200C52E24 /* Fenci.bundle */; };
+		320643BD1D7984D200C52E24 /* FenciHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 320643B91D7984D200C52E24 /* FenciHelper.mm */; };
+		320643BE1D7984D200C52E24 /* FenciModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 320643BA1D7984D200C52E24 /* FenciModel.cpp */; };
+		325F17361D79289800B3A60C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F17351D79289800B3A60C /* AppDelegate.swift */; };
+		325F17381D79289800B3A60C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F17371D79289800B3A60C /* ViewController.swift */; };
+		325F173A1D79289800B3A60C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325F17391D79289800B3A60C /* Assets.xcassets */; };
+		325F173D1D79289800B3A60C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F173B1D79289800B3A60C /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		320643931D7984D200C52E24 /* DictTrie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DictTrie.hpp; sourceTree = "<group>"; };
+		320643941D7984D200C52E24 /* FullSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FullSegment.hpp; sourceTree = "<group>"; };
+		320643951D7984D200C52E24 /* HMMModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HMMModel.hpp; sourceTree = "<group>"; };
+		320643961D7984D200C52E24 /* HMMSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HMMSegment.hpp; sourceTree = "<group>"; };
+		320643971D7984D200C52E24 /* Jieba.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Jieba.hpp; sourceTree = "<group>"; };
+		320643981D7984D200C52E24 /* KeywordExtractor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KeywordExtractor.hpp; sourceTree = "<group>"; };
+		3206439A1D7984D200C52E24 /* ArgvContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ArgvContext.hpp; sourceTree = "<group>"; };
+		3206439B1D7984D200C52E24 /* BlockingQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlockingQueue.hpp; sourceTree = "<group>"; };
+		3206439C1D7984D200C52E24 /* BoundedBlockingQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BoundedBlockingQueue.hpp; sourceTree = "<group>"; };
+		3206439D1D7984D200C52E24 /* BoundedQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BoundedQueue.hpp; sourceTree = "<group>"; };
+		3206439E1D7984D200C52E24 /* Closure.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Closure.hpp; sourceTree = "<group>"; };
+		3206439F1D7984D200C52E24 /* Colors.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Colors.hpp; sourceTree = "<group>"; };
+		320643A01D7984D200C52E24 /* Condition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Condition.hpp; sourceTree = "<group>"; };
+		320643A11D7984D200C52E24 /* Config.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Config.hpp; sourceTree = "<group>"; };
+		320643A21D7984D200C52E24 /* FileLock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileLock.hpp; sourceTree = "<group>"; };
+		320643A31D7984D200C52E24 /* ForcePublic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ForcePublic.hpp; sourceTree = "<group>"; };
+		320643A41D7984D200C52E24 /* LocalVector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LocalVector.hpp; sourceTree = "<group>"; };
+		320643A51D7984D200C52E24 /* Logging.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Logging.hpp; sourceTree = "<group>"; };
+		320643A61D7984D200C52E24 /* Md5.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Md5.hpp; sourceTree = "<group>"; };
+		320643A71D7984D200C52E24 /* MutexLock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MutexLock.hpp; sourceTree = "<group>"; };
+		320643A81D7984D200C52E24 /* NonCopyable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NonCopyable.hpp; sourceTree = "<group>"; };
+		320643A91D7984D200C52E24 /* StdExtension.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StdExtension.hpp; sourceTree = "<group>"; };
+		320643AA1D7984D200C52E24 /* StringUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StringUtil.hpp; sourceTree = "<group>"; };
+		320643AB1D7984D200C52E24 /* Thread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Thread.hpp; sourceTree = "<group>"; };
+		320643AC1D7984D200C52E24 /* ThreadPool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ThreadPool.hpp; sourceTree = "<group>"; };
+		320643AD1D7984D200C52E24 /* MixSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MixSegment.hpp; sourceTree = "<group>"; };
+		320643AE1D7984D200C52E24 /* MPSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MPSegment.hpp; sourceTree = "<group>"; };
+		320643AF1D7984D200C52E24 /* PosTagger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PosTagger.hpp; sourceTree = "<group>"; };
+		320643B01D7984D200C52E24 /* PreFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PreFilter.hpp; sourceTree = "<group>"; };
+		320643B11D7984D200C52E24 /* QuerySegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QuerySegment.hpp; sourceTree = "<group>"; };
+		320643B21D7984D200C52E24 /* SegmentBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SegmentBase.hpp; sourceTree = "<group>"; };
+		320643B31D7984D200C52E24 /* SegmentTagged.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SegmentTagged.hpp; sourceTree = "<group>"; };
+		320643B41D7984D200C52E24 /* TextRankExtractor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextRankExtractor.hpp; sourceTree = "<group>"; };
+		320643B51D7984D200C52E24 /* Trie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Trie.hpp; sourceTree = "<group>"; };
+		320643B61D7984D200C52E24 /* Unicode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Unicode.hpp; sourceTree = "<group>"; };
+		320643B71D7984D200C52E24 /* Fenci.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Fenci.bundle; sourceTree = "<group>"; };
+		320643B81D7984D200C52E24 /* FenciHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FenciHelper.h; sourceTree = "<group>"; };
+		320643B91D7984D200C52E24 /* FenciHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FenciHelper.mm; sourceTree = "<group>"; };
+		320643BA1D7984D200C52E24 /* FenciModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FenciModel.cpp; sourceTree = "<group>"; };
+		320643BB1D7984D200C52E24 /* FenciModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FenciModel.h; sourceTree = "<group>"; };
+		325F17321D79289800B3A60C /* Fenci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fenci.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		325F17351D79289800B3A60C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		325F17371D79289800B3A60C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		325F17391D79289800B3A60C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		325F173C1D79289800B3A60C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		325F173E1D79289800B3A60C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		325F17691D7940C800B3A60C /* Fenci-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fenci-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		325F172F1D79289800B3A60C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		320643911D7984D200C52E24 /* Fenci */ = {
+			isa = PBXGroup;
+			children = (
+				320643921D7984D200C52E24 /* cppjieba */,
+				320643B71D7984D200C52E24 /* Fenci.bundle */,
+				320643B81D7984D200C52E24 /* FenciHelper.h */,
+				320643B91D7984D200C52E24 /* FenciHelper.mm */,
+				320643BB1D7984D200C52E24 /* FenciModel.h */,
+				320643BA1D7984D200C52E24 /* FenciModel.cpp */,
+			);
+			path = Fenci;
+			sourceTree = "<group>";
+		};
+		320643921D7984D200C52E24 /* cppjieba */ = {
+			isa = PBXGroup;
+			children = (
+				320643931D7984D200C52E24 /* DictTrie.hpp */,
+				320643941D7984D200C52E24 /* FullSegment.hpp */,
+				320643951D7984D200C52E24 /* HMMModel.hpp */,
+				320643961D7984D200C52E24 /* HMMSegment.hpp */,
+				320643971D7984D200C52E24 /* Jieba.hpp */,
+				320643981D7984D200C52E24 /* KeywordExtractor.hpp */,
+				320643991D7984D200C52E24 /* limonp */,
+				320643AD1D7984D200C52E24 /* MixSegment.hpp */,
+				320643AE1D7984D200C52E24 /* MPSegment.hpp */,
+				320643AF1D7984D200C52E24 /* PosTagger.hpp */,
+				320643B01D7984D200C52E24 /* PreFilter.hpp */,
+				320643B11D7984D200C52E24 /* QuerySegment.hpp */,
+				320643B21D7984D200C52E24 /* SegmentBase.hpp */,
+				320643B31D7984D200C52E24 /* SegmentTagged.hpp */,
+				320643B41D7984D200C52E24 /* TextRankExtractor.hpp */,
+				320643B51D7984D200C52E24 /* Trie.hpp */,
+				320643B61D7984D200C52E24 /* Unicode.hpp */,
+			);
+			path = cppjieba;
+			sourceTree = "<group>";
+		};
+		320643991D7984D200C52E24 /* limonp */ = {
+			isa = PBXGroup;
+			children = (
+				3206439A1D7984D200C52E24 /* ArgvContext.hpp */,
+				3206439B1D7984D200C52E24 /* BlockingQueue.hpp */,
+				3206439C1D7984D200C52E24 /* BoundedBlockingQueue.hpp */,
+				3206439D1D7984D200C52E24 /* BoundedQueue.hpp */,
+				3206439E1D7984D200C52E24 /* Closure.hpp */,
+				3206439F1D7984D200C52E24 /* Colors.hpp */,
+				320643A01D7984D200C52E24 /* Condition.hpp */,
+				320643A11D7984D200C52E24 /* Config.hpp */,
+				320643A21D7984D200C52E24 /* FileLock.hpp */,
+				320643A31D7984D200C52E24 /* ForcePublic.hpp */,
+				320643A41D7984D200C52E24 /* LocalVector.hpp */,
+				320643A51D7984D200C52E24 /* Logging.hpp */,
+				320643A61D7984D200C52E24 /* Md5.hpp */,
+				320643A71D7984D200C52E24 /* MutexLock.hpp */,
+				320643A81D7984D200C52E24 /* NonCopyable.hpp */,
+				320643A91D7984D200C52E24 /* StdExtension.hpp */,
+				320643AA1D7984D200C52E24 /* StringUtil.hpp */,
+				320643AB1D7984D200C52E24 /* Thread.hpp */,
+				320643AC1D7984D200C52E24 /* ThreadPool.hpp */,
+			);
+			path = limonp;
+			sourceTree = "<group>";
+		};
+		325F17291D79289800B3A60C = {
+			isa = PBXGroup;
+			children = (
+				325F17341D79289800B3A60C /* Fenci */,
+				325F17331D79289800B3A60C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		325F17331D79289800B3A60C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				325F17321D79289800B3A60C /* Fenci.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		325F17341D79289800B3A60C /* Fenci */ = {
+			isa = PBXGroup;
+			children = (
+				320643911D7984D200C52E24 /* Fenci */,
+				325F17351D79289800B3A60C /* AppDelegate.swift */,
+				325F17371D79289800B3A60C /* ViewController.swift */,
+				325F17391D79289800B3A60C /* Assets.xcassets */,
+				325F173B1D79289800B3A60C /* Main.storyboard */,
+				325F173E1D79289800B3A60C /* Info.plist */,
+				325F17691D7940C800B3A60C /* Fenci-Bridging-Header.h */,
+			);
+			path = Fenci;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		325F17311D79289800B3A60C /* Fenci */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 325F17411D79289800B3A60C /* Build configuration list for PBXNativeTarget "Fenci" */;
+			buildPhases = (
+				325F172E1D79289800B3A60C /* Sources */,
+				325F172F1D79289800B3A60C /* Frameworks */,
+				325F17301D79289800B3A60C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fenci;
+			productName = Fenci;
+			productReference = 325F17321D79289800B3A60C /* Fenci.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		325F172A1D79289800B3A60C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = sdq;
+				TargetAttributes = {
+					325F17311D79289800B3A60C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 325F172D1D79289800B3A60C /* Build configuration list for PBXProject "Fenci" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 325F17291D79289800B3A60C;
+			productRefGroup = 325F17331D79289800B3A60C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				325F17311D79289800B3A60C /* Fenci */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		325F17301D79289800B3A60C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				320643BC1D7984D200C52E24 /* Fenci.bundle in Resources */,
+				325F173A1D79289800B3A60C /* Assets.xcassets in Resources */,
+				325F173D1D79289800B3A60C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		325F172E1D79289800B3A60C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				320643BD1D7984D200C52E24 /* FenciHelper.mm in Sources */,
+				320643BE1D7984D200C52E24 /* FenciModel.cpp in Sources */,
+				325F17381D79289800B3A60C /* ViewController.swift in Sources */,
+				325F17361D79289800B3A60C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		325F173B1D79289800B3A60C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				325F173C1D79289800B3A60C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		325F173F1D79289800B3A60C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		325F17401D79289800B3A60C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		325F17421D79289800B3A60C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Fenci/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.shidanqing.Fenci;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fenci/Fenci-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		325F17431D79289800B3A60C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Fenci/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.shidanqing.Fenci;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fenci/Fenci-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		325F172D1D79289800B3A60C /* Build configuration list for PBXProject "Fenci" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325F173F1D79289800B3A60C /* Debug */,
+				325F17401D79289800B3A60C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		325F17411D79289800B3A60C /* Build configuration list for PBXNativeTarget "Fenci" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325F17421D79289800B3A60C /* Debug */,
+				325F17431D79289800B3A60C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 325F172A1D79289800B3A60C /* Project object */;
+}
