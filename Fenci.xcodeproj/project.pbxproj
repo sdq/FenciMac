@@ -64,6 +64,7 @@
 		325F173C1D79289800B3A60C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		325F173E1D79289800B3A60C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		325F17691D7940C800B3A60C /* Fenci-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fenci-Bridging-Header.h"; sourceTree = "<group>"; };
+		326536241D7C3E33009D6B79 /* Fenci.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Fenci.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +160,7 @@
 		325F17341D79289800B3A60C /* Fenci */ = {
 			isa = PBXGroup;
 			children = (
+				326536241D7C3E33009D6B79 /* Fenci.entitlements */,
 				320643911D7984D200C52E24 /* Fenci */,
 				325F17351D79289800B3A60C /* AppDelegate.swift */,
 				325F17371D79289800B3A60C /* ViewController.swift */,
@@ -202,6 +204,12 @@
 				TargetAttributes = {
 					325F17311D79289800B3A60C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = H95RU58B4T;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -349,6 +357,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Fenci/Fenci.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Fenci/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -364,6 +374,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Fenci/Fenci.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Fenci/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

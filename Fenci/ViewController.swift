@@ -23,7 +23,9 @@ class ViewController: NSViewController {
         methodButton.removeAllItems()
         methodButton.addItemsWithTitles(methods)
         methodButton.selectItemAtIndex(selectedItem)
+        inputTextView.string = "在这里输入文本"
         outputTextView.editable = false
+        outputTextView.string = "[\"在\",\"这里\",\"输入\",\"文本\"]"
     }
 
     @IBAction func chooseMethod(sender: NSPopUpButton) {
@@ -53,6 +55,14 @@ class ViewController: NSViewController {
             outputTextView.string = "\(words)"
         default:
             break
+        }
+    }
+
+    @IBAction func goToGithub(sender: NSButton) {
+        if let checkURL = NSURL(string: "https://github.com/sdq/FenciMac") {
+            if NSWorkspace.sharedWorkspace().openURL(checkURL) {
+                print("url successfully opened")
+            }
         }
     }
 
