@@ -10,8 +10,8 @@
 		320643BC1D7984D200C52E24 /* Fenci.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 320643B71D7984D200C52E24 /* Fenci.bundle */; };
 		320643BD1D7984D200C52E24 /* FenciHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 320643B91D7984D200C52E24 /* FenciHelper.mm */; };
 		320643BE1D7984D200C52E24 /* FenciModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 320643BA1D7984D200C52E24 /* FenciModel.cpp */; };
+		32510B841EC44582007E3684 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F17371D79289800B3A60C /* ViewController.swift */; };
 		325F17361D79289800B3A60C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F17351D79289800B3A60C /* AppDelegate.swift */; };
-		325F17381D79289800B3A60C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F17371D79289800B3A60C /* ViewController.swift */; };
 		325F173A1D79289800B3A60C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325F17391D79289800B3A60C /* Assets.xcassets */; };
 		325F173D1D79289800B3A60C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F173B1D79289800B3A60C /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -205,6 +205,7 @@
 					325F17311D79289800B3A60C = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = H95RU58B4T;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -251,7 +252,7 @@
 			files = (
 				320643BD1D7984D200C52E24 /* FenciHelper.mm in Sources */,
 				320643BE1D7984D200C52E24 /* FenciModel.cpp in Sources */,
-				325F17381D79289800B3A60C /* ViewController.swift in Sources */,
+				32510B841EC44582007E3684 /* ViewController.swift in Sources */,
 				325F17361D79289800B3A60C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +367,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Fenci/Fenci-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -382,6 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.shidanqing.Fenci;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Fenci/Fenci-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
