@@ -26,7 +26,7 @@ class ViewController: NSViewController {
         methodButton.selectItem(at: selectedItem)
         inputTextView.string = "在这里输入文本"
         outputTextView.isEditable = false
-        outputTextView.string = " 在 这里 输入 文本"
+        outputTextView.string = "这里会输出分词后的文本，以给定的分隔符划分（默认为空格）。"
     }
 
     @IBAction func chooseMethod(_ sender: NSPopUpButton) {
@@ -34,44 +34,73 @@ class ViewController: NSViewController {
     }
 
     @IBAction func segmentSentence(_ sender: NSButton) {
-        let sentence = inputTextView.string
-        if sentence == "" {
-            return
-        }
-        let splitstr = splitWord.stringValue
-        switch selectedItem {
-        case 0:
-            if let words = fenci?.mpSegment(sentence) {
-                outputTextView.string = strarr2str(str: words, split: splitstr)
-            } else {
-                outputTextView.string = "分词失败，请重试！"
+        self.outputTextView.string = "分词中，请稍等..........."
+        let queue = DispatchQueue(label: "fenci.segmentqueue")
+        queue.async {
+            let sentence = self.inputTextView.string
+            if sentence == "" {
+                return
             }
-        case 1:
-            if let words = fenci?.hmmSegment(sentence) {
-                outputTextView.string = strarr2str(str: words, split: splitstr)
-            } else {
-                outputTextView.string = "分词失败，请重试！"
+            let splitstr = self.splitWord.stringValue
+            switch self.selectedItem {
+            case 0:
+                if let words = self.fenci?.mpSegment(sentence) {
+                    let outputString = self.strarr2str(str: words, split: splitstr)
+                    DispatchQueue.main.async {
+                        self.outputTextView.string = outputString
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.outputTextView.string = "分词失败，请重试！"
+                    }
+                }
+            case 1:
+                if let words = self.fenci?.hmmSegment(sentence) {
+                    let outputString = self.strarr2str(str: words, split: splitstr)
+                    DispatchQueue.main.async {
+                        self.outputTextView.string = outputString
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.outputTextView.string = "分词失败，请重试！"
+                    }
+                }
+            case 2:
+                if let words = self.fenci?.mixSegment(sentence) {
+                    let outputString = self.strarr2str(str: words, split: splitstr)
+                    DispatchQueue.main.async {
+                        self.outputTextView.string = outputString
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.outputTextView.string = "分词失败，请重试！"
+                    }
+                }
+            case 3:
+                if let words = self.fenci?.fullSegment(sentence) {
+                    let outputString = self.strarr2str(str: words, split: splitstr)
+                    DispatchQueue.main.async {
+                        self.outputTextView.string = outputString
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.outputTextView.string = "分词失败，请重试！"
+                    }
+                }
+            case 4:
+                if let words = self.fenci?.querySegment(sentence) {
+                    let outputString = self.strarr2str(str: words, split: splitstr)
+                    DispatchQueue.main.async {
+                        self.outputTextView.string = outputString
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.outputTextView.string = "分词失败，请重试！"
+                    }
+                }
+            default:
+                break
             }
-        case 2:
-            if let words = fenci?.mixSegment(sentence) {
-                outputTextView.string = strarr2str(str: words, split: splitstr)
-            } else {
-                outputTextView.string = "分词失败，请重试！"
-            }
-        case 3:
-            if let words = fenci?.fullSegment(sentence) {
-                outputTextView.string = strarr2str(str: words, split: splitstr)
-            } else {
-                outputTextView.string = "分词失败，请重试！"
-            }
-        case 4:
-            if let words = fenci?.querySegment(sentence) {
-                outputTextView.string = strarr2str(str: words, split: splitstr)
-            } else {
-                outputTextView.string = "分词失败，请重试！"
-            }
-        default:
-            break
         }
     }
     
@@ -89,14 +118,54 @@ class ViewController: NSViewController {
         return sepstr
     }
 
-    @IBAction func goToGithub(_ sender: NSButton) {
-        if let checkURL = URL(string: "https://github.com/sdq/FenciMac") {
-            if NSWorkspace.shared().open(checkURL) {
-                print("url successfully opened")
+    @IBAction func importTXT(_ sender: NSButton) {
+        let openPanel = NSOpenPanel()
+        openPanel.canChooseDirectories = false
+        openPanel.canChooseFiles = true
+        openPanel.allowsMultipleSelection = false;
+        openPanel.allowedFileTypes = ["txt","md"]
+        openPanel.beginSheetModal(for: self.view.window!) { (response) -> Void in
+            guard response == NSFileHandlingPanelOKButton else {return}
+            print(openPanel.urls)
+            let url = openPanel.urls[0]
+            do {
+                let txt = try String(contentsOf: url, encoding: .utf8)
+                DispatchQueue.main.async {
+                    self.inputTextView.string = txt
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    
+    @IBAction func export(_ sender: NSButton) {
+        let savePanel = NSSavePanel()
+        savePanel.nameFieldStringValue = "fenci.txt"
+        savePanel.allowedFileTypes = ["txt","md"]
+        savePanel.isExtensionHidden = false
+        savePanel.beginSheetModal(for: self.view.window!) { (response) -> Void in
+            guard response == NSFileHandlingPanelOKButton else {return}
+            print(savePanel.url ?? "no url")
+            if let txturl = savePanel.url {
+                do {
+                    try self.outputTextView.string?.write(to: txturl, atomically: false, encoding: .utf8)
+                }
+                catch {
+                    print(error)
+                }
             }
         }
     }
 
+    @IBAction func copyToPasteboard(_ sender: NSButton) {
+        let pasteboard = NSPasteboard.general()
+        pasteboard.declareTypes([NSPasteboardTypeString], owner: nil)
+        if let text = outputTextView.string {
+            pasteboard.setString(text, forType: NSPasteboardTypeString)
+        }
+    }
 
 }
 

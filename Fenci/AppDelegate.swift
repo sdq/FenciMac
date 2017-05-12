@@ -19,6 +19,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    @IBAction func about(_ sender: NSMenuItem) {
+        if let checkURL = URL(string: "https://github.com/sdq/FenciMac") {
+            if NSWorkspace.shared().open(checkURL) {
+                print("url successfully opened")
+            }
+        }
+    }
 
 }
 
