@@ -1,5 +1,5 @@
 # FenciMac
-中文分词 Mac版 [download](https://itunes.apple.com/cn/app/id1150537071)
+中文分词 Mac版 [Mac App Store](https://itunes.apple.com/cn/app/id1150537071)
 
 ![app](https://github.com/sdq/FenciMac/blob/master/demo.png)
 
