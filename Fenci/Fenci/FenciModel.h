@@ -16,6 +16,7 @@
 #include "cppjieba/MixSegment.hpp"
 #include "cppjieba/FullSegment.hpp"
 #include "cppjieba/QuerySegment.hpp"
+#include "cppjieba/KeywordExtractor.hpp"
 #include <string>
 #include <vector>
 
@@ -24,6 +25,7 @@ extern cppjieba::HMMSegment * hmmSegmentor;
 extern cppjieba::MixSegment * mixSegmentor;
 extern cppjieba::FullSegment * fullSegmentor;
 extern cppjieba::QuerySegment * querySegmentor;
+extern cppjieba::KeywordExtractor * keywordExtractor;
 
 void MPInit(const std::string& dictPath, const std::string& userDictPath);
 void MPCut(const std::string& sentence, std::vector<std::string>& words);
@@ -39,5 +41,8 @@ void FullCut(const std::string& sentence, std::vector<std::string>& words);
 
 void QueryInit(const std::string& dictPath, const std::string& hmmPath, const std::string& userDictPath);
 void QueryCut(const std::string& sentence, std::vector<std::string>& words);
+
+void KeywordInit(const std::string& dictPath, const std::string& hmmPath, const std::string& idfPath, const std::string& stopWordPath, const std::string& userDictPath);
+void KeywordExtract(const std::string& sentence, std::vector<std::string>& words, size_t topN);
 
 #endif /* defined(__Fenci__) */

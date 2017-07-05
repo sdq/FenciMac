@@ -27,10 +27,14 @@
     
     NSString *dictPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Fenci.bundle/jieba.dict.utf8"];
     NSString *hmmPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Fenci.bundle/hmm_model.utf8"];
+    NSString *idfPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Fenci.bundle/idf.utf8"];
+    NSString *stopWordPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Fenci.bundle/stop_words.utf8"];
     NSString *userDictPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Fenci.bundle/user.dict.utf8"];
     
     const char *cDictPath = [dictPath UTF8String];
     const char *cHmmPath = [hmmPath UTF8String];
+    const char *cIdfPath = [idfPath UTF8String];
+    const char *cStopWordPath = [stopWordPath UTF8String];
     const char *cUserDictPath = [userDictPath UTF8String];
     
     MPInit(cDictPath, cUserDictPath);
@@ -38,6 +42,7 @@
     MixInit(cDictPath, cHmmPath, cUserDictPath);
     FullInit(cDictPath);
     QueryInit(cDictPath, cHmmPath, cUserDictPath);
+    KeywordInit(cDictPath, cHmmPath, cIdfPath, cStopWordPath, cUserDictPath);
     
     return self;
 }
@@ -82,6 +87,15 @@
     const char* sentence = [inputSentence UTF8String];
     std::vector<std::string> words;
     QueryCut(sentence, words);
+    std::string result;
+    result << words;
+    return [NSString stringWithUTF8String:result.c_str()];
+}
+
+- (NSString *)keywordExtract:(NSString *)inputSentence Count:(int)count {
+    const char* sentence = [inputSentence UTF8String];
+    std::vector<std::string> words;
+    KeywordExtract(sentence, words, count);
     std::string result;
     result << words;
     return [NSString stringWithUTF8String:result.c_str()];

@@ -12,19 +12,30 @@ class ViewController: NSViewController {
     
     @IBOutlet var inputTextView: NSTextView!
     @IBOutlet var outputTextView: NSTextView!
+    @IBOutlet var keywordTextView: NSTextView!
     @IBOutlet weak var methodButton: NSPopUpButton!
     @IBOutlet var splitWord: NSTextField!
+    @IBOutlet weak var keywordCount: NSPopUpButton!
+    @IBOutlet weak var keywordButton: NSButton!
+    @IBOutlet weak var segmentButton: NSButton!
     
     let fenci = FenciHelper.sharedInstance()
-    let methods = ["最大概率法 MPSegment","隐式马尔科夫模型 HMMSegment","混合模式 MixSegment","全模式 FullSegment","搜索模式 QuerySegment"]
+    let methods = ["最大概率法","","混合模式","全模式","搜索模式"]
+    let keywordCounts = ["5", "10", "15", "20", "25", "30"]
     var selectedItem = 2
+    var selectKeywordCount = 5
 
     override func viewDidLoad() {
         super.viewDidLoad()
         methodButton.removeAllItems()
         methodButton.addItems(withTitles: methods)
         methodButton.selectItem(at: selectedItem)
+        keywordCount.removeAllItems()
+        keywordCount.addItems(withTitles: keywordCounts)
+        keywordCount.selectItem(at: 0)
         inputTextView.string = "在这里输入文本"
+        keywordTextView.isEditable = false
+        keywordTextView.string = "这里会输出输入文本的关键词，默认词数为5。"
         outputTextView.isEditable = false
         outputTextView.string = "这里会输出分词后的文本，以给定的分隔符划分（默认为空格）。"
     }
@@ -33,7 +44,12 @@ class ViewController: NSViewController {
         selectedItem = sender.indexOfSelectedItem
     }
 
+    @IBAction func chooseKeywordCount(_ sender: NSPopUpButton) {
+        selectKeywordCount = 5 + 5 * sender.indexOfSelectedItem
+    }
+
     @IBAction func segmentSentence(_ sender: NSButton) {
+        self.segmentButton.isEnabled = false
         self.outputTextView.string = "分词中，请稍等..........."
         let queue = DispatchQueue(label: "fenci.segmentqueue")
         queue.async {
@@ -48,10 +64,12 @@ class ViewController: NSViewController {
                     let outputString = self.strarr2str(str: words, split: splitstr)
                     DispatchQueue.main.async {
                         self.outputTextView.string = outputString
+                        self.segmentButton.isEnabled = true
                     }
                 } else {
                     DispatchQueue.main.async {
                         self.outputTextView.string = "分词失败，请重试！"
+                        self.segmentButton.isEnabled = true
                     }
                 }
             case 1:
@@ -59,10 +77,12 @@ class ViewController: NSViewController {
                     let outputString = self.strarr2str(str: words, split: splitstr)
                     DispatchQueue.main.async {
                         self.outputTextView.string = outputString
+                        self.segmentButton.isEnabled = true
                     }
                 } else {
                     DispatchQueue.main.async {
                         self.outputTextView.string = "分词失败，请重试！"
+                        self.segmentButton.isEnabled = true
                     }
                 }
             case 2:
@@ -70,10 +90,12 @@ class ViewController: NSViewController {
                     let outputString = self.strarr2str(str: words, split: splitstr)
                     DispatchQueue.main.async {
                         self.outputTextView.string = outputString
+                        self.segmentButton.isEnabled = true
                     }
                 } else {
                     DispatchQueue.main.async {
                         self.outputTextView.string = "分词失败，请重试！"
+                        self.segmentButton.isEnabled = true
                     }
                 }
             case 3:
@@ -81,10 +103,12 @@ class ViewController: NSViewController {
                     let outputString = self.strarr2str(str: words, split: splitstr)
                     DispatchQueue.main.async {
                         self.outputTextView.string = outputString
+                        self.segmentButton.isEnabled = true
                     }
                 } else {
                     DispatchQueue.main.async {
                         self.outputTextView.string = "分词失败，请重试！"
+                        self.segmentButton.isEnabled = true
                     }
                 }
             case 4:
@@ -96,6 +120,7 @@ class ViewController: NSViewController {
                 } else {
                     DispatchQueue.main.async {
                         self.outputTextView.string = "分词失败，请重试！"
+                        self.segmentButton.isEnabled = true
                     }
                 }
             default:
@@ -116,6 +141,32 @@ class ViewController: NSViewController {
         }
         let sepstr = arrat.reduce("",{$0 + splitstr + $1})
         return sepstr
+    }
+
+    @IBAction func keywordExtract(_ sender: NSButton) {
+        self.keywordButton.isEnabled = false
+        self.keywordTextView.string = "关键词提取中，请稍等..........."
+        let queue = DispatchQueue(label: "fenci.keywordqueue")
+        queue.async {
+            let sentence = self.inputTextView.string
+            if sentence == "" {
+                return
+            }
+            if let words = self.fenci?.keywordExtract(sentence, count: Int32(self.selectKeywordCount)) {
+                let outputString = self.strarr2str(str: words, split: " ")
+                print(outputString)
+                DispatchQueue.main.async {
+                    self.keywordTextView.string = outputString
+                    self.keywordButton.isEnabled = true
+                }
+            } else {
+                print("fail")
+                DispatchQueue.main.async {
+                    self.keywordTextView.string = "提取关键词失败，请重试！"
+                    self.keywordButton.isEnabled = true
+                }
+            }
+        }
     }
 
     @IBAction func importTXT(_ sender: NSButton) {

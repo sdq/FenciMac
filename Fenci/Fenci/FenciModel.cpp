@@ -16,6 +16,7 @@ cppjieba::HMMSegment * hmmSegmentor;
 cppjieba::MixSegment * mixSegmentor;
 cppjieba::FullSegment * fullSegmentor;
 cppjieba::QuerySegment * querySegmentor;
+cppjieba::KeywordExtractor * keywordExtractor;
 
 void MPInit(const std::string& dictPath, const std::string& userDictPath) {
     if(mpSegmentor == NULL) {
@@ -73,4 +74,15 @@ void QueryInit(const std::string& dictPath, const std::string& hmmPath, const st
 void QueryCut(const std::string& sentence, std::vector<std::string>& words) {
     assert(querySegmentor);
     querySegmentor->Cut(sentence, words);
+}
+
+void KeywordInit(const std::string& dictPath, const std::string& hmmPath, const std::string& idfPath, const std::string& stopWordPath, const std::string& userDictPath) {
+    if(keywordExtractor == NULL) {
+        keywordExtractor = new KeywordExtractor(dictPath, hmmPath, idfPath, stopWordPath, userDictPath);
+    }
+}
+
+void KeywordExtract(const std::string& sentence, std::vector<std::string>& words, size_t topN) {
+    assert(keywordExtractor);
+    keywordExtractor->Extract(sentence, words, topN);
 }

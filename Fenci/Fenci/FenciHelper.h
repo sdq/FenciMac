@@ -17,5 +17,6 @@
 - (NSString *)mixSegment:(NSString *)inputSentence;
 - (NSString *)fullSegment:(NSString *)inputSentence;
 - (NSString *)querySegment:(NSString *)inputSentence;
+- (NSString *)keywordExtract:(NSString *)inputSentence Count:(int)count;
 
 @end
